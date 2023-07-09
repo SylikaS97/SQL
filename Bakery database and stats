@@ -1,0 +1,23 @@
+Create a Bakery database
+CREATE TABLE Bakery (id INTEGER PRIMARY KEY, name TEXT, price NUMERIC, sweetnonsweet TEXT, flavor TEXT);
+
+INSERT INTO Bakery VALUES (1, " Vanilla Cupcake", 1.00, "sweet", "Vanilla");
+INSERT INTO Bakery VALUES (2, " Chocolate Cupcake", 1.00,"sweet", "Chocolate");
+INSERT INTO Bakery VALUES (3, "Strawberry Cupcake",2.00,"sweet","strawberry");
+INSERT INTO Bakery VALUES (4, "Small Vanilla Cake", 30.00, "sweet", "Vanilla");
+INSERT INTO Bakery VALUES (5, "Small Chocolate Cake",30.00,"sweet",
+"Chocoalte");
+INSERT INTO Bakery VALUES (6,"Small Strawberry Cake", 30.00, "sweet", "Strawberry");
+INSERT INTO Bakery VALUES (7,"M Vanilla Cake", 50.00, "sweet", "Vanilla");
+INSERT INTO Bakery VALUES (8,"M Chocolate Cake", 50.00, "sweet", "Chocolate");
+INSERT INTO Bakery VALUES (9,"M Strawberry Cake", 50.00, "sweet", "Strawberry");
+INSERT INTO Bakery VALUES (10,"L Vanilla Cake", 70.00, "sweet", "Vanilla");
+INSERT INTO Bakery VALUES (11,"L Chocoalte Cake", 70.00, "sweet", "Chocolate");
+INSERT INTO Bakery VALUES (12,"L Strawberry Cake", 70.00, "sweet", "Strawberry");
+INSERT INTO Bakery VALUES (13,"L Strawberry Cake w Buttercreame", 70.00, "sweet", "Strawberry");
+INSERT INTO Bakery VALUES (14,"L Vanilla Cake w Buttercream", 70.00, "sweet", "Vanilla");
+INSERT INTO Bakery VALUES (15,"L Chocolate Cake W Buttercream", 70.00, "sweet", "Chocolate");
+-- display the sum of the price list
+SELECT SUM (price)FROM Bakery;
+-- display products that are less than 50
+SELECT * FROM Bakery WHERE price <50
