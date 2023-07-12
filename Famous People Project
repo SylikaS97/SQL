@@ -1,0 +1,40 @@
+/* Create table about the people and what they do here */
+CREATE TABLE  Famous_People (ID INTEGER PRIMARY KEY,Fullname TEXT, Age INTEGER,Networth INTEGER);
+
+INSERT INTO 'Famous_People' VALUES( 1, "Maddie Ziegler", 20,5000000);
+INSERT INTO 'Famous_People' VALUES( 2, "Skai Jackson", 21,500000);
+INSERT INTO 'Famous_People' VALUES( 3, "Olivia Rodrigo", 20,8000000);
+INSERT INTO 'Famous_People' VALUES( 4, "Jenna Ortega", 20,3000000);
+INSERT INTO 'Famous_People' VALUES( 5, "Zendaya Coleman", 26,20000000);
+INSERT INTO 'Famous_People' VALUES( 6, "Tom Holland", 27,26000000);
+INSERT INTO 'Famous_People' VALUES( 7, "Chloe Lukasiak", 22,6000000);
+INSERT INTO 'Famous_People' VALUES( 8, "Nia Frazier", 22,2000000);
+INSERT INTO 'Famous_People' VALUES( 9, "Chloe Bailey", 25,2000000);
+INSERT INTO 'Famous_People' VALUES( 10, "Nicola Coughlan", 36,1000000);
+INSERT INTO 'Famous_People' VALUES( 11, "Phoebe Dynevor", 28,3000000);
+INSERT INTO 'Famous_People' VALUES( 12, "Jonathan Bailey", 35,1000000);
+INSERT INTO 'Famous_People' VALUES( 13, "Simone Ashley", 28,2000000);
+INSERT INTO 'Famous_People' VALUES( 14, "Regé-Jean Page", 35,1000000);
+INSERT INTO 'Famous_People' VALUES( 15, "Claudia Jessie", 33,5000000);
+CREATE TABLE Famous_Data (ID INTEGER PRIMARY KEY,Name TEXT,Occupation TEXT);
+
+INSERT INTO Famous_DATA VALUES( 1, "Maddie", "Dancer");
+INSERT INTO Famous_DATA VALUES( 2, "Skai", "Actress");
+INSERT INTO Famous_DATA VALUES( 3, "Olivia", "Singer");
+INSERT INTO Famous_DATA VALUES( 4, "Jenna", "Actress");
+INSERT INTO Famous_DATA VALUES( 5, "Zendaya", "Actress");
+INSERT INTO Famous_DATA VALUES( 6, "Tom", "Actor");
+INSERT INTO Famous_DATA VALUES( 7, "Chloe", "Dancer");
+INSERT INTO Famous_DATA VALUES( 8, "Nia", "Dancer");
+INSERT INTO Famous_DATA VALUES( 9, "Chloe", "Dancer");
+INSERT INTO Famous_DATA VALUES( 10, "Nicola", "Actress");
+INSERT INTO Famous_DATA VALUES( 11, "Pheobe", "Actress");
+INSERT INTO Famous_DATA VALUES( 12, "Jonathan", "Actor");
+INSERT INTO Famous_DATA VALUES( 13, "Simone", "Actress");
+INSERT INTO Famous_DATA VALUES( 14, "Rege", "Actor");
+INSERT INTO Famous_DATA VALUES( 15, "Claudia", "Actress");
+
+
+SELECT Fullname, Age,Networth,Occupation
+FROM Famous_People JOIN Famous_data
+
