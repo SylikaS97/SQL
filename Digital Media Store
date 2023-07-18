@@ -1,52 +1,64 @@
+--First I checked the database for customers who did not live in the US--
+
 SELECT Customerid,Firstname,Lastname,Country
 FROM chinook.customers
 WHERE Country <> 'United States'
 
+-- I checked for customers who lived in Brazil--
 SELECT *
 FROM chinook.customers
 WHERE Country = 'Brazil'
-
+-- Checked the invoices of customers who are from Brazil.
 SELECT invoices.invoiceid,invoices.invoicedate,invoices.billingcountry,customers.firstname,customers.lastname,
 FROM chinook.invoices LEFT JOIN chinook.customers ON invoices.customerid = customers.customerid
 ORDER BY country = 'Brazil'
 
+- Tried a different query for the invoices of customers from Brazil--
 SELECT cust.FirstName, cust.LastName, inv.InvoiceId, inv.BillingCountry, inv.InvoiceDate
 FROM chinook.invoices as inv 
 LEFT JOIN chinook.customers as cust 
 on inv.CustomerId = cust.CustomerId 
 WHERE inv.BillingCountry = "Brazil";
 
+-- Found all employess who's jobtitle is a Sales Support Agent--
 SELECT *
 FROM employees
 WHERE title='Sales Support Agent'
 
+-- Found all the invoices for people who's biling state started and ended with NV--
 SELECT *
 FROM chinook.invoices
 WHERE billingstate LIKE '%NV%'
 
 SELECT DISTINCT BillingCountry FROM chinook.Invoices ;
 
+-- Joined the invoice,employees and customer table to find the invoices associated with each sales agent--
 SELECT emp.LastName, emp.Firstname, inv.InvoiceId
 FROM chinook.Employees emp 
 JOIN chinook.Customers cust ON cust.SupportRepId = emp.EmployeeId
 JOIN chinook.Invoices Inv ON Inv.CustomerId = cust.CustomerId;
 
+--Found the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers--
 SELECT emp.LastName, emp.Firstname, cust.FirstName, cust.LastName, cust.Country, inv.total
 FROM chinook.employees emp 
 JOIN chinook.Customers cust ON cust.SupportRepId = emp.EmployeeId
 JOIN chinook.Invoices Inv ON Inv.CustomerId = cust.CustomerId;
 
+-- How many invoices in 2009--
 SELECT COUNT (invoicedate)
 FROM INVOICES
 WHERE invoicedate LIKE '2009%'
 
+-- How many total sales in 2009--
 SELECT SUM(total)
 FROM invoices
 WHERE invoicedate LIKE '2009%'
 
+-Joined tracks and invoice items to the purchased track name with each invoice line ID--
 SELECT tracks.name,invoice_items.invoiceid
 FROM tracks JOIN invoice_items ON tracks.trackid = invoice_items.trackid
 
+in continuation from the last query I joined the tables to find purchased track name AND artist name with each invoice line ID
 SELECT tracks.name,invoice_items.invoiceid, tracks.composer
 FROM tracks JOIN invoice_items ON tracks.trackid = invoice_items.trackid
 
